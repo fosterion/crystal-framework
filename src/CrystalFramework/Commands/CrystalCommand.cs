@@ -16,7 +16,7 @@ namespace CrystalFramework.Commands
 
         public CrystalCommand(Action<object> execute, Func<object, bool> canExecute = null)
         {
-            _execute = execute;
+            _execute = execute ?? throw new ArgumentNullException(nameof(execute));
             _canExecute = canExecute;
         }
 
