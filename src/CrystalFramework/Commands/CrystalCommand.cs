@@ -3,31 +3,27 @@ using System.Windows.Input;
 
 namespace CrystalFramework.Commands
 {
-    class CrystalCommand : ICommand
+    public class CrystalCommand : ICommand
     {
-        private Action<object> _execute;
-        private Func<object, bool> _canExecute;
+        private Action _action;
+        private Func<bool> _canExecute;
 
-        public event EventHandler CanExecuteChanged
-        {
-            add { CommandManager.RequerySuggested += value; }
-            remove { CommandManager.RequerySuggested -= value; }
-        }
+        public event EventHandler CanExecuteChanged;
 
-        public CrystalCommand(Action<object> execute, Func<object, bool> canExecute = null)
+        public CrystalCommand(Action action, Func<bool> canExecute = null)
         {
-            _execute = execute ?? throw new ArgumentNullException(nameof(execute));
+            _action = action ?? throw new ArgumentNullException(nameof(action));
             _canExecute = canExecute;
         }
 
         public bool CanExecute(object parameter)
         {
-            return _canExecute == null || _canExecute(parameter);
+            return _canExecute == null || _canExecute();
         }
 
         public void Execute(object parameter)
         {
-            _execute(parameter);
+            _action();
         }
     }
 }
