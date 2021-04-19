@@ -44,6 +44,9 @@
   <ItemGroup>
     <Compile Include="Attributes\CustomAttribute.cs" />
     <Compile Include="Commands\CrystalCommand.cs" />
+    <Compile Include="Extensions\DataTableExtensions.cs" />
+    <Compile Include="Extensions\EnumExtensions.cs" />
+    <Compile Include="Extensions\IEnumerableExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />
