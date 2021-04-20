@@ -3,14 +3,14 @@ using System.Windows.Input;
 
 namespace CrystalFramework.Commands
 {
-    public class CrystalCommand : ICommand
+    public class RelayCommand : ICommand
     {
         private Action _action;
         private Func<bool> _canExecute;
 
         public event EventHandler CanExecuteChanged;
 
-        public CrystalCommand(Action action, Func<bool> canExecute = null)
+        public RelayCommand(Action action, Func<bool> canExecute = null)
         {
             _action = action ?? throw new ArgumentNullException(nameof(action));
             _canExecute = canExecute;
