@@ -47,6 +47,9 @@
     <Compile Include="Extensions\DataTableExtensions.cs" />
     <Compile Include="Extensions\EnumExtensions.cs" />
     <Compile Include="Extensions\IEnumerableExtensions.cs" />
+    <Compile Include="Extensions\LoggerExtensions.cs" />
+    <Compile Include="Logger\CrystalLogger.cs" />
+    <Compile Include="Logger\LogType.cs" />
     <Compile Include="Mvvm\ObservableObject.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
